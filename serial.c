@@ -128,9 +128,9 @@ int main(void) {
         printf("  Number of runs (REPS)        = %d\n", REPS);
         printf("  Mix: Member=%.3f, Insert=%.3f, Delete=%.3f\n",
                C->fMem, C->fIns, C->fDel);
-        printf("=====================================================\n");
-        printf("%-8s %-5s %-12s %-12s %-12s %-12s\n",
-               "Algo", "Run", "Elapsed(ms)", "MemberHits", "InsertOK", "DeleteOK");
+        // printf("=====================================================\n");
+        // printf("%-8s %-5s %-12s %-12s %-12s %-12s\n",
+        //        "Algo", "Run", "Elapsed(ms)", "MemberHits", "InsertOK", "DeleteOK");
 
         for (int r = 0; r < REPS; ++r) {
             /* 1) Build initial (NOT timed) */
@@ -162,8 +162,8 @@ int main(void) {
             double elapsed = t1 - t0;
             times[r] = elapsed;
 
-            printf("%-8s %-5d %-12.3f %-12lu %-12lu %-12lu\n",
-                   "serial", r + 1, elapsed, mh, ins_ok, del_ok);
+            // printf("%-8s %-5d %-12.3f %-12lu %-12lu %-12lu\n",
+            //        "serial", r + 1, elapsed, mh, ins_ok, del_ok);
 
             free(ops);
             FreeList(head);

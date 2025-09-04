@@ -20,7 +20,7 @@
 #define M 10000
 
 // Number of repeated runs per (case × thread-count)
-#define REPS 10
+#define REPS 100
 
 // Thread counts to test (as in the lab table)
 static const int THREADS_LIST[] = {1, 2, 4, 8};
@@ -196,15 +196,15 @@ int main(void) {
         printf("  Number of runs (REPS)        = %d\n", REPS);
         printf("  Mix: Member=%.3f, Insert=%.3f, Delete=%.3f\n",
                C->fMem, C->fIns, C->fDel);
-        printf("=====================================================\n");
+        // printf("=====================================================\n");
 
         for (int ti = 0; ti < N_THREADS; ++ti) {
             int T = THREADS_LIST[ti];
             double times[REPS];
 
             printf("[ Threads = %d ]\n", T);
-            printf("%-8s %-6s %-12s %-12s %-12s %-12s\n",
-                   "Algo", "Run", "Elapsed(ms)", "MemberHits", "InsertOK", "DeleteOK");
+            // printf("%-8s %-6s %-12s %-12s %-12s %-12s\n",
+            //        "Algo", "Run", "Elapsed(ms)", "MemberHits", "InsertOK", "DeleteOK");
 
             for (int r = 0; r < REPS; ++r) {
                 // 1) Build initial list (NOT timed)
@@ -256,8 +256,8 @@ int main(void) {
                 double elapsed = t1 - t0;
                 times[r] = elapsed;
 
-                printf("%-8s %-6d %-12.3f %-12lu %-12lu %-12lu\n",
-                       "rwlock", r + 1, elapsed, mh, ins_ok, del_ok);
+                // printf("%-8s %-6d %-12.3f %-12lu %-12lu %-12lu\n",
+                //        "rwlock", r + 1, elapsed, mh, ins_ok, del_ok);
 
                 // 5) Cleanup for this run
                 pthread_barrier_destroy(&start_barrier);
