@@ -1,8 +1,8 @@
 # CS4532 – Lab 1 (Serial, Mutex, RW-Lock)
 
 **Group Members:**  
-- Moraes M. A. R. – 210390F  
-- Thisum J. A. D. N. – 210651H  
+- Moraes M. A. R. - 210390F  
+- Thisum J. A. D. N. - 210651H  
 
 **Repository:** [parallel_and_concurrent_programming](https://github.com/NirodhaThisum/parallel_and_concurrent_programming)  
 **Date:** September 4, 2025  
